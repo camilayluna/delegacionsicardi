@@ -1,0 +1,485 @@
+.centrar-texto{
+    text-align: center;
+}
+.formulario{
+    background-color: var(--blanco);
+    margin: -5rem auto 0 auto;
+    width: 95%;
+    padding: 5rem;
+    }
+    .campo{
+    display: flex;
+    margin-bottom: 2.3rem;
+    
+    }
+    .campo__label{
+        flex: 0 0 9rem;
+     font-family: var(--fuenteheading);
+     font-weight: 700;
+     text-align: right;
+     padding-right: 2rem;
+    }
+    .campo__field{
+    flex: ;
+    border: 3px solid rgb(114, 112, 112);
+    border-radius: 2px;
+    }
+    .campo__field--texarea{
+    height: 20rem;
+    }
+
+    .boton{
+        
+        display: block;
+        background-color: #4ce7d2;
+        color: #020202;
+        padding: 1rem 3rem;
+        border-radius: 6px;
+       
+        font-size: 1rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        cursor: pointer;
+    }
+    .boton:hover{
+        font-size: 1.2rem;
+    }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+    
+}
+.contenedor{
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    padding: 60px 0;
+}
+header{
+    text-align: center;
+    height: 450px;
+    background-image: linear-gradient(to top, rgba(67, 98, 238, 0.212) 0%, rgba(173, 146, 246, 0.151) 100%),url(../img/inicial.jpeg);
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
+background-position: center;
+}
+.header_contac{
+    height: 450px;
+    background-image: linear-gradient(to top, rgba(67, 98, 238, 0.212) 0%, rgba(173, 146, 246, 0.151) 100%)url(../img/frenteprin.jpeg);
+  background-repeat: no-repeat;
+   background-size: cover;
+background-attachment: fixed;   
+background-position: center;
+}
+.head{
+    font-family: sans-serif;
+    text-align: center;
+padding: 0;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+color: #ffffff;
+text-shadow: 6px 6px #1d3da7;
+}
+.hamburguer{
+    position: fixed;
+    
+    top: 40px;
+    right: 40px;
+    background: #fff;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow:  10px 1px rgba(241, 248, 243, 0.781) ;
+
+}
+.menu_navegacion{
+position: fixed;
+top: 0;
+right: 0;
+width: 30vw;
+height: 100%;
+background-image: linear-gradient(to top, #2694dd 0%, #1298e68e 100%);
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+transition: transform .3s ease-in-out;
+transform: translate(110%);
+box-shadow: 0 0 6px rgba(17, 16, 20, 0.445);
+border-color:2PX #020202;
+}
+.menu_navegacion:hover{
+    background-image: linear-gradient(to top, #1089fb 0%, #0f41e48e 100%);
+}
+.spread{
+    transform: translate(0);
+}
+.menu_navegacion a{
+    color: rgb(255, 251, 251);
+    text-decoration: none;
+    font-size: 20px;
+}
+.menu_navegacion a:hover{
+    font-size: 35px;
+}
+
+.titulo{
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+.copi{
+    font-weight: 300;
+    font-size: 25px;
+    
+}
+/*nuestro servicio*/
+.subtitulo{
+    text-align: center;
+    font-weight: 300;
+    color:#060807;
+    margin-bottom: 50px;
+    font-size: 50px;
+    
+}
+.subtitulo:hover{
+    font-size: 60px;
+    color:#0c69f5;
+}
+.contenedor-servicio{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+.contenedor-galeria img{
+    width: 40%;
+}
+.checklist-cursos{
+    width: 45%;
+}
+.service{
+    margin-bottom: 20px;
+
+}
+.n-service{
+
+margin-bottom: 7px;
+color: #0c69f5;
+}
+.number{
+    display: inline-block;
+    background-image: linear-gradient(to top, #0679fd 0%, #0c2875 100%);
+width: 30px;
+height: 30px;
+color: #fff;
+text-align: center;
+border-radius: 50%;
+font-weight: 700;
+line-height: 30px;
+margin-right: 5px;
+}
+.gallery{
+    background: #dcf5f8;
+   
+}
+.contenedor-galeria{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.img-galeria{
+    object-fit: cover;
+    width: 30%;
+    display: block;
+    margin-bottom: 15px;
+    box-shadow: 0 0 6px rgba(0,0,0,.5);
+    cursor: pointer;
+}
+.imagen-ligth{
+    position: fixed;
+    background: rgba(0,0,0,.6);
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+justify-content: center;
+align-items: center;
+transform: translate(100%);
+transition: transform .2s ease-in-out;
+
+}
+.show{
+    transform: translate(0);
+}
+.agregar-imagen{
+    object-fit: cover;
+    width: 60%;
+    border-radius: 10px;
+    transform: scale(0);
+    transition: transform .3s .2s;
+}
+.showImage{
+    transform: scale(1);
+}
+
+
+.close{
+    position: absolute;
+    top:15px;
+    right:15px;
+    width: 40px;
+    cursor: pointer;
+
+
+
+}
+/*    expertos      */
+.expert{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.cont-expert{
+    width: 30%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.cont-expert img{
+    width: 80%;
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+}
+.n-expert{
+    display: inline-block;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 400;
+}
+.n-expert1{
+    display: inline-block;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 25px;
+    background-color: #0c69f5;
+    border-radius: 15px;
+    background-color: #0998f8;
+    
+}
+/*footer*/
+footer{
+    background: #5a93e9;
+    padding-bottom: 0.1px;
+
+}
+.contenedor-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap:  wrap;
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+.contac-us{
+    width: 40%;
+    color: rgb(22, 11, 11);
+    margin-left: 2rem;
+}
+.brand{
+    font-weight: 500;
+    font-size: 40px;
+}
+.brand+p{
+    font-weight: 500;
+
+}
+.social-media{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+/******************************/
+.socialmedian-icon{
+    display: inline-block;
+    margin-left: 20px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgb(19, 15, 15);
+    border-radius: 50%;
+    text-align: center;
+    color: rgb(22, 11, 11);
+    
+
+}
+.socialmedian-icon:hover{
+    background: rgb(31, 23, 23);
+    color: #9a61d3;
+}
+.socialmedian-icon i{
+    font-size: 30px;
+    line-height: 50px;
+}
+ .line{
+     width: 90%;
+     max-width: 1200px;
+     margin: auto;
+     height: 2px;
+     background: rgb(80, 224, 181);
+     margin-bottom: 60px;
+ }
+
+
+ /*   responsib*/
+ @media screen and (max-width:800px) {
+      .menu-navegacion{
+        width: 50vw;
+      }
+      .titulo{
+          font-size: 40px;
+      }
+.contenedor-servicio{
+    width: 80%;
+    margin-bottom: 40px;
+}
+.checklist-cursos{
+    width: 80%;
+
+
+}
+.service{
+    margin-bottom: 30px;
+
+}
+.agregar-imagen{
+    width: 80%;
+}
+.img-galeria{
+    width: 45%;
+}
+.cont-expert{
+    width: 80%;
+}
+.contenedor-footer{
+    justify-content: center;
+}
+.contenedor-footer{
+    justify-content: center;
+}
+.social-media{
+    width: 80%;
+    justify-content: space-evenly;
+}
+.social-media-icon{
+    margin-left: 0;
+}
+
+
+.social-media i{
+    margin-left: 0;
+}
+.contac-us{
+    text-align: center;
+    width: 80%;
+    margin-bottom: 40px;
+}
+ }
+
+
+ /*de resolucion 300px*/
+ @media screen and(max-width:500px) {
+     .menu_navegacion{
+         width: 65vw;
+     }
+     .hamburguer{
+         top: 20px;
+         right: 20px;
+     }
+     .titulo{
+         font-size: 30px;
+     }
+     .sustitulo{
+         font-size: 30px;
+     }
+     .agregar-imagen{
+         width: 95%;
+     }
+     .img-galeria{
+         width: 95%;
+
+     }
+     .social-media{
+         width: 100%;
+     }
+.contac-us{
+    width: 90%;
+
+}
+
+.formulario{
+    text-align: left;
+
+
+}
+
+ }
+ @media(min-width:150px){
+     
+         
+     
+     .campo{
+         text-align: center;
+     align-items: center;
+     justify-content: center;
+     display: grid;
+     }
+     .campo__field--texarea{
+         height: 150px ;
+         width:100%;
+        
+
+        
+     } 
+     .campo__label--men{
+        padding-right: 2rem;
+        font-weight: 700;
+     }
+     .servicio_img{
+        width: 50%;
+        margin-bottom: 2rem;
+     }
+     
+ }
+ .registro {
+     align-items: center;
+     margin-left: 550px;
+     margin-bottom: 20px;
+     margin-top: 20px;
+     font-weight: bold;
+      text-decoration:none;
+
+ }
+ .registro a{
+     text-decoration: none;
+     color: #020202;
+ }
+ .registro a:hover{
+    font-size: 1.1rem;
+    color: #0998f8;
+}

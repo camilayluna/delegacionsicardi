@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autogestion de tareas</title>
+    <link rel="stylesheet" href="css.css">
+    
+</head>
+<body>
+    <header class="header header_contac"id="inicio">
+        <img src="img/vc_img1.jpeg" alt="" class="hamburguer">
+       <nav class="menu_navegacion">
+       <a href="index.html">inicio</a>
+      
+       <a href="#galeria">galeria</a>
+       <a href="#profesores">informacion</a>
+       
+ </nav>
+
+ </header>
+
+    <header id="header_for">
+    <h2>Ingrese tarea</h2>
+    <form id="formulario">
+        <label id="traba" for="tareas">Tarea:</label><br>
+        <select id="tareas" name="tareas">
+            <option value="seleccionar">Seleccionar</option>
+            <option value="no_habitual">No Habitual</option>
+            <option value="escombro">Escombro</option>
+            <option value="luminarias">Luminarias</option>
+            <option value="zangeo">Zangeo</option>
+            <option value="Caño_roto">Caño roto</option>
+            <option value="poste_caido">Poste caído</option>
+            <option value="residuos_domiciliarios">Residuos domiciliarios</option>
+            <option value="bacheo">Bacheo</option>
+            <option value="OTRO">OTRO</option>
+        </select><br>
+        
+        <label id="t3" for="direccion">Dirección (ej. 659-12 y 13 o 659 esq 12):</label><br>
+        <input type="text" id="direccion" name="direccion" ><br>
+        
+        <label id="t2" for="relevo">Relevo:</label><br>
+        <input type="text" id="relevo" name="relevo"><br>
+        
+        <label id="tarea4" for="fecha">Fecha:</label><br>
+        <input type="date" id="fecha" name="fecha"><br>
+        <label id="tarea5" for="descripcion">Descripción:</label><br>
+        <textarea id="descripcion" name="descripcion"></textarea><br>
+        <br>
+        <input id="agregarbtn" type="button" value="Agregar formulario" onclick="agregarFormulario()">
+        <input id="buscarbtn" type="button" value="Buscar" onclick="buscarFormularios()">
+        <input id="limpiarbtn" type="button" value="Limpiar" onclick="limpiarResultados()">
+        <input id="guardarbtn" type="button" value="Descargar en Excel" onclick="exportToExcel()">
+        <input id="borrarbtn" type="button" value="Borrar todos los formularios" onclick="borrarFormularios()">
+    </form>
+
+    <h2 id="tex_busqueda">Resultados de Búsqueda</h2>
+    <textarea id="resultados" rows="5" readonly></textarea>
+</header>
+
+
+<section class="gallery" id="galeria">
+    <div class="contenedor">
+        <h2 class="subtitulo">FOTOS </h2>
+        <div class="contenedor-galeria">
+    <img src="img1/WhatsApp Image 2024-03-01 at 10.01.01 PM (1).jpeg" alt=""class="img-galeria">
+    <img src="img1/WhatsApp Image 2024-03-01 at 10.01.01 PM (2).jpeg" alt="" class="img-galeria">
+    <img src="img1/WhatsApp Image 2024-03-01 at 10.01.01 PM (4).jpeg" alt=""class="img-galeria">
+    <img src="img1/WhatsApp Image 2024-03-01 at 10.01.01 PM.jpeg" alt=""class="img-galeria">
+    <img src="img1/WhatsApp Image 2024-03-01 at 10.01.02 PM (1).jpeg" alt=""class="img-galeria">
+    <img src="img1/WhatsApp Image 2024-03-01 at 10.01.02 PM (2).jpeg" alt=""class="img-galeria">
+    
+        </div>
+    </div>
+    
+        </section>
+        <section class="imagen-ligth">
+            <img src="img/close.svg" alt=""class="close">
+            <img src="img/vc_img4.jpg" alt="" class="agregar-imagen">
+        </section>
+        <section class="contenedor" id="profesores">
+            <h2 class="subtitulo">Nuestro equipo</h2>
+            <section class="expert">
+                <div class="cont-expert">
+                    <img src="img/" alt="">
+                <h3 class="n-expert"> Delia ,Sandra,Luján</h3>
+                <h4 class="n-expert">administración y secretaria</h4>
+                <h4 class="n-expert">Atención de lunes a viernes de  08hs a 15hs</h4>
+                
+                
+                </div>
+                <div class="cont-expert">
+                   
+                <h3 class="n-expert1">Lorena Dimatteo</h3>
+                <h4 class="n-expert1">Delegada comunal</h4>
+                <h4 class="n-expert">Gestión Julio ALAK</h4>
+                </div>
+               
+                <div class="cont-expert">
+                    <img src="img/suc3.jpg" alt="">
+                <h3 class="n-expert"> trabajadores en campo </h3>
+                <h4 class="n-expert">Maquinistas,barrenderas,desmalezadores y recicladores</h4>
+                <h4 class="n-expert">¡Son el motor del equipo!</h4>
+                </div>
+            </section>
+        </section>
+    </main>
+    <footer id="contacto">
+        <div class=" contenedor-footer">
+            <div class=" contac-us">
+                <h2 class="brand">  Centro comunal Villa Garibaldi-Parque Sicardi-Ignacio Correas</h2>
+              <p>¡En equipo podemos con todo!</p>
+            </div>
+            
+          
+        </div>
+        <div class="line"></div>
+        <div class="registro"> <a href="https://www.facebook.com/reel/370277449139974">
+            website diseñada y creada por <img src="img/registered-regular-24.png" alt=""> createventas 2024
+        </a>  </div>
+    </footer>
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+    <script>
+        var formularios = [];
+
+        function agregarFormulario() {
+            var direccion = document.getElementById("direccion").value;
+            var trabajo = document.getElementById("tareas").value;
+            var tareaExistente = formularios.some(formulario => formulario[2] === direccion && formulario[0] === trabajo);
+            if (tareaExistente) {
+                alert("Tarea ya registrada");
+                return;
+            }
+
+            var descripcion = document.getElementById("descripcion").value;
+            var relevo = document.getElementById("relevo").value;
+            var fecha = document.getElementById("fecha").value;
+
+            formularios.push([trabajo, descripcion, direccion, relevo, fecha]);
+
+            document.getElementById("descripcion").value = "";
+            document.getElementById("direccion").value = "";
+            document.getElementById("relevo").value = "";
+            document.getElementById("fecha").value = "";
+        }
+
+        function buscarFormularios() {
+            var resultadosTextarea = document.getElementById("resultados");
+            var direccionBusqueda = document.getElementById("direccion").value;
+            resultadosTextarea.value = "";
+
+            for (var i = 0; i < formularios.length; i++) {
+                var formulario = formularios[i];
+                if (formulario[2] === direccionBusqueda) {
+                    var resultado = "Trabajo: " + formulario[0] + "\n";
+                    resultado += "Descripción: " + formulario[1] + "\n";
+                    resultado += "Dirección: " + formulario[2] + "\n";
+                    resultado += "Relevo: " + formulario[3] + "\n";
+                    resultado += "Fecha: " + formulario[4] + "\n\n";
+
+                    resultadosTextarea.value += resultado;
+                }
+            }
+        }
+
+        function limpiarResultados() {
+            document.getElementById("resultados").value = "";
+        }
+
+        function borrarFormularios() {
+            formularios = [];
+            document.getElementById("resultados").value = "";
+        }
+
+        function exportToExcel() {
+            var wb = XLSX.utils.book_new();
+            var ws = XLSX.utils.aoa_to_sheet([
+                ["Trabajo", "Descripción", "Dirección", "Relevo", "Fecha"],
+                ...formularios
+            ]);
+            XLSX.utils.book_append_sheet(wb, ws, "Formularios");
+
+            var fechaActual = new Date().toISOString().slice(0,10);
+            var nombreArchivo = "Formularios_" + fechaActual + ".xlsx";
+            XLSX.writeFile(wb, nombreArchivo);
+        }
+    </script>
+ <script src="js/menu.js"></script>
+ <script src="js/lightbox.js"></script>
+</body>
+</html>
